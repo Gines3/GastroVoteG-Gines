@@ -2,7 +2,7 @@
 <resources>
     <color name="color_principal">#B4532A</color>
     <color name="fondo">#FFF9F4</color>
-    <color name="fondo_resumen">#F3E6DC</color>
+    <color name="fondo_resumen">#F0DDD0</color>
     <color name="texto">#29221E</color>
     <color name="texto_secundario">#6D5B50</color>
     <color name="blanco">#FFFFFF</color>
