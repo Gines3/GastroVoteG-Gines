@@ -51,74 +51,298 @@
                 android:id="@+id/tvSubtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/subtitulo"
+                android:text="@string/ruta_tapa"
                 android:textColor="@color/texto_secundario"
                 android:textSize="18sp"
                 android:layout_marginBottom="12dp" />
 
-            <EditText
-                android:id="@+id/etBar"
+            <TextView
+                style="@style/TextoSeccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_bar"
-                android:inputType="textCapWords"
-                android:autofillHints="organization"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/etTapa"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_tapa"
-                android:inputType="textCapSentences"
-                android:singleLine="true" />
-
-            <EditText
-                android:id="@+id/etPrecio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/hint_precio"
-                android:inputType="numberDecimal"
-                android:singleLine="true" />
+                android:text="@string/elige_bar" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:layout_marginTop="8dp">
+                android:orientation="horizontal">
 
-                <Switch
-                    android:id="@+id/swMeGusta"
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnBarAnterior"
+                    android:layout_width="48dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/me_gusta"
-                    android:textSize="16sp" />
+                    android:minWidth="0dp"
+                    android:text="@string/bar_anterior"
+                    android:contentDescription="@string/bar_anterior" />
 
-                <TextView
-                    android:id="@+id/tvMeGusta"
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    android:text="@string/me_gusta_inicial"
-                    android:textColor="@color/texto"
-                    android:textSize="15sp" />
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:id="@+id/tvNombreBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/bar_inicial"
+                        android:textColor="@color/texto"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvPosicionBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/posicion_bar_inicial"
+                        android:textColor="@color/texto_secundario"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnBarSiguiente"
+                    android:layout_width="48dp"
+                    android:layout_height="wrap_content"
+                    android:minWidth="0dp"
+                    android:text="@string/bar_siguiente"
+                    android:contentDescription="@string/bar_siguiente" />
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@drawable/fondo_tarjeta">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvNombreTapa"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/tapa_inicial"
+                        android:textColor="@color/color_principal"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/btnFavorito"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/btn_star_big_off"
+                        android:contentDescription="@string/favorito"
+                        app:tint="@color/color_principal" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDescripcionTapa"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/descripcion_tapa_inicial"
+                    android:textColor="@color/texto_secundario"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvPrecioBase"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/precio_base_inicial"
+                    android:textColor="@color/texto"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/rbMediaTapa"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="4.0"
+                    android:stepSize="0.5" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/TextoSeccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/tu_resena" />
+
+            <TextView
+                style="@style/EtiquetaCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tamano" />
+
+            <RadioGroup
+                android:id="@+id/rgTamano"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbTapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="@string/tamano_tapa" />
+
+                <RadioButton
+                    android:id="@+id/rbMediaRacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tamano_media_racion" />
+
+                <RadioButton
+                    android:id="@+id/rbRacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tamano_racion" />
+            </RadioGroup>
+
+            <TextView
+                style="@style/EtiquetaCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/puntuacion" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/rbPuntuacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:rating="0"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:id="@+id/tvOpinionPuntuacion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/sin_puntuar"
+                    android:textColor="@color/texto"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/EtiquetaCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/calidad_precio" />
+
+            <SeekBar
+                android:id="@+id/sbCalidadPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="10"
+                android:progress="5" />
+
+            <TextView
+                android:id="@+id/tvCalidadPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="@string/calidad_precio_inicial"
+                android:textColor="@color/texto_secundario"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/EtiquetaCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/etiquetas" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cbVegetariana"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/vegetariana"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/cbSinGluten"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sin_gluten"
+                    android:textSize="12sp" />
+
+                <CheckBox
+                    android:id="@+id/cbPicante"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/picante"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <Switch
+                android:id="@+id/swMeGusta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/me_gusta"
+                android:textSize="15sp" />
 
             <CheckBox
                 android:id="@+id/cbEstudiante"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:text="@string/descuento_estudiante" />
+
+            <TextView
+                style="@style/EtiquetaCampo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/comentario" />
+
+            <EditText
+                android:id="@+id/etComentario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:hint="@string/hint_comentario"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="200"
+                android:minLines="3"
+                android:maxLines="5" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:orientation="horizontal"
-                android:weightSum="2"
-                android:layout_marginTop="12dp">
+                android:weightSum="2">
 
                 <Button
                     android:id="@+id/btnLimpiar"
@@ -136,24 +360,75 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="6dp"
-                    android:text="@string/calcular_precio"
+                    android:text="@string/publicar_resena"
                     android:textColor="@color/blanco"
                     android:backgroundTint="@color/color_principal" />
             </LinearLayout>
 
             <TextView
+                style="@style/TextoSeccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/resumen" />
+
+            <TextView
                 android:id="@+id/tvResumen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="6dp"
                 android:padding="12dp"
                 android:background="@color/fondo_resumen"
-                android:text="@string/precio_final_inicial"
+                android:text="@string/resumen_inicial"
                 android:textColor="@color/texto"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:lineSpacingExtra="4dp" />
+
+            <TextView
+                android:id="@+id/tvProgresoRuta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/progreso_inicial"
+                android:textColor="@color/texto"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/pbRuta"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="8"
+                android:progress="0"
+                android:progressTint="@color/color_principal" />
+
+            <!-- Campos antiguos ocultos temporalmente para mantener compatible MainActivity. -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/etBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etTapa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/etPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tvMeGusta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
