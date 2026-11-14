@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/ivBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:src="@drawable/banner_tapas"
+                android:contentDescription="@string/banner_descripcion" />
+
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/titulo"
+                android:textColor="@color/texto"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSubtitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/subtitulo"
+                android:textColor="@color/texto_secundario"
+                android:textSize="18sp"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/etBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_bar"
+                android:inputType="textCapWords"
+                android:autofillHints="organization"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etTapa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_tapa"
+                android:inputType="textCapSentences"
+                android:singleLine="true" />
+
+            <EditText
+                android:id="@+id/etPrecio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_precio"
+                android:inputType="numberDecimal"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <Switch
+                    android:id="@+id/swMeGusta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/me_gusta"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMeGusta"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/me_gusta_inicial"
+                    android:textColor="@color/texto"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/cbEstudiante"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/descuento_estudiante" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginTop="12dp">
+
+                <Button
+                    android:id="@+id/btnLimpiar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:text="@string/limpiar"
+                    android:textColor="@color/blanco"
+                    android:backgroundTint="@color/color_principal" />
+
+                <Button
+                    android:id="@+id/btnCalcular"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/calcular_precio"
+                    android:textColor="@color/blanco"
+                    android:backgroundTint="@color/color_principal" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:padding="12dp"
+                android:background="@color/fondo_resumen"
+                android:text="@string/precio_final_inicial"
+                android:textColor="@color/texto"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

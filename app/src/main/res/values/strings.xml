@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GastroVote</string>
+    <string name="banner_descripcion">Banner con imágenes de tapas</string>
+    <string name="titulo">GastroVote</string>
+    <string name="subtitulo">Valora tu tapa</string>
+    <string name="hint_bar">Nombre del bar</string>
+    <string name="hint_tapa">Tapa que has probado</string>
+    <string name="hint_precio">Precio (€)</string>
+    <string name="me_gusta">Me gusta</string>
+    <string name="me_gusta_inicial">¿Te ha gustado?</string>
+    <string name="me_gusta_activado">¡Te gusta esta tapa!</string>
+    <string name="descuento_estudiante">Descuento estudiante (10%)</string>
+    <string name="limpiar">Limpiar</string>
+    <string name="calcular_precio">Calcular precio</string>
+    <string name="precio_final_inicial">Aquí aparecerá el precio final</string>
+    <string name="toast_carnet">Recuerda enseñar tu carnet de estudiante</string>
+    <string name="toast_bar_tapa">Indica el bar y la tapa</string>
+    <string name="toast_precio_valido">Introduce un precio válido</string>
+    <string name="toast_precio_calculado">Precio calculado</string>
+    <string name="toast_formulario_limpio">Formulario limpio</string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="resumen_con_descuento">Tapa: %1$s\nBar: %2$s\nPrecio: %3$s €\nDescuento estudiante: -%4$s €\nPrecio final: %5$s €\nMe gusta: %6$s</string>
+    <string name="resumen_sin_descuento">Tapa: %1$s\nBar: %2$s\nPrecio: %3$s €\nDescuento estudiante: no aplicado\nPrecio final: %4$s €\nMe gusta: %5$s</string>
+</resources>
