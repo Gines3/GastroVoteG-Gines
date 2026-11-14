@@ -23,4 +23,34 @@
     <string name="no">No</string>
     <string name="resumen_con_descuento">Tapa: %1$s\nBar: %2$s\nPrecio: %3$s €\nDescuento estudiante: -%4$s €\nPrecio final: %5$s €\nMe gusta: %6$s</string>
     <string name="resumen_sin_descuento">Tapa: %1$s\nBar: %2$s\nPrecio: %3$s €\nDescuento estudiante: no aplicado\nPrecio final: %4$s €\nMe gusta: %5$s</string>
+    <string name="ruta_tapa">Ruta de la tapa</string>
+    <string name="elige_bar">ELIGE EL BAR</string>
+    <string name="bar_anterior">◀</string>
+    <string name="bar_siguiente">▶</string>
+    <string name="bar_inicial">Taberna La Marinera</string>
+    <string name="posicion_bar_inicial">Bar 1 de 8</string>
+    <string name="tapa_inicial">Marinera</string>
+    <string name="descripcion_tapa_inicial">Rosquilla con ensaladilla y anchoa</string>
+    <string name="precio_base_inicial">2,50 €</string>
+    <string name="favorito">Añadir a favoritos</string>
+    <string name="tu_resena">TU RESEÑA</string>
+    <string name="tamano">Tamaño</string>
+    <string name="tamano_tapa">Tapa</string>
+    <string name="tamano_media_racion">Media ración</string>
+    <string name="tamano_racion">Ración</string>
+    <string name="puntuacion">Puntuación</string>
+    <string name="sin_puntuar">Sin puntuar</string>
+    <string name="calidad_precio">Calidad-precio</string>
+    <string name="calidad_precio_inicial">5/10</string>
+    <string name="etiquetas">Etiquetas</string>
+    <string name="vegetariana">Vegetariana</string>
+    <string name="sin_gluten">Sin gluten</string>
+    <string name="picante">Picante</string>
+    <string name="comentario">Comentario</string>
+    <string name="hint_comentario">Escribe tu opinión (opcional)</string>
+    <string name="publicar_resena">Publicar reseña</string>
+    <string name="resumen">RESUMEN</string>
+    <string name="resumen_inicial">Aquí aparecerá tu última reseña</string>
+    <string name="progreso_inicial">Ruta: 0 de 8 bares</string>
+
 </resources>
