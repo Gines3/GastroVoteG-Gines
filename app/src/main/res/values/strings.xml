@@ -61,4 +61,12 @@
     <string name="opinion_muy_buena">¡Muy buena!</string>
     <string name="opinion_espectacular">¡Espectacular!</string>
     <string name="contador_caracteres_inicial">0/200</string>
+    <string name="dialog_limpiar_titulo">Borrar la reseña</string>
+    <string name="dialog_limpiar_mensaje">¿Borrar la reseña?</string>
+    <string name="dialog_limpiar_confirmar">Sí, borrar</string>
+    <string name="dialog_limpiar_cancelar">Cancelar</string>
+    <string name="toast_puntuar">Puntúa la tapa antes de publicar</string>
+    <string name="toast_resena_publicada">¡Reseña publicada!</string>
+    <string name="etiquetas_ninguna">Ninguna</string>
+    <string name="resumen_resena">Tapa: %1$s\nBar: %2$s\nTamaño: %3$s\nPrecio base: %4$s €\nPrecio según tamaño: %5$s €\nDescuento estudiante: %6$s €\nPrecio final: %7$s €\nPuntuación: %8$s/5\nCalidad-precio: %9$d/10\nMe gusta: %10$s\nEtiquetas: %11$s\nComentario: %12$s</string>
 </resources>
