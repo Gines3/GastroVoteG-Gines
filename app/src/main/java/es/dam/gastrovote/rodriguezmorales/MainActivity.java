@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+import androidx.appcompat.app.AlertDialog;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -213,6 +213,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calcularPrecio() {
+        if (rbPuntuacion.getRating() == 0) {
+            Toast.makeText(this, R.string.toast_puntuar, Toast.LENGTH_SHORT).show();
+            return;
+        }
         double precioBase;
 
         try {
@@ -223,13 +227,17 @@ public class MainActivity extends AppCompatActivity {
         }
 
         double multiplicador = 1;
-
         int tamanoSeleccionado = rgTamano.getCheckedRadioButtonId();
+        String tamano;
 
         if (tamanoSeleccionado == R.id.rbMediaRacion) {
             multiplicador = 2;
+            tamano = getString(R.string.tamano_media_racion);
         } else if (tamanoSeleccionado == R.id.rbRacion) {
             multiplicador = 3;
+            tamano = getString(R.string.tamano_racion);
+        } else {
+            tamano = getString(R.string.tamano_tapa);
         }
 
         double precio = precioBase * multiplicador;
@@ -245,44 +253,94 @@ public class MainActivity extends AppCompatActivity {
         String meGusta = swMeGusta.isChecked()
                 ? getString(R.string.si)
                 : getString(R.string.no);
+        String etiquetas = "";
 
-        DecimalFormatSymbols simbolos = new DecimalFormatSymbols(new Locale("es", "ES"));
-        DecimalFormat formato = new DecimalFormat("0.00", simbolos);
-
-        String resumen;
-
-        if (cbEstudiante.isChecked()) {
-            resumen = getString(R.string.resumen_con_descuento,
-                    nombresTapas[barActual],
-                    nombresBares[barActual],
-                    formato.format(precio),
-                    formato.format(descuento),
-                    formato.format(precioFinal),
-                    meGusta);
-        } else {
-            resumen = getString(R.string.resumen_sin_descuento,
-                    nombresTapas[barActual],
-                    nombresBares[barActual],
-                    formato.format(precio),
-                    formato.format(precioFinal),
-                    meGusta);
+        if (cbVegetariana.isChecked()) {
+            etiquetas += getString(R.string.vegetariana) + ", ";
         }
+
+        if (cbSinGluten.isChecked()) {
+            etiquetas += getString(R.string.sin_gluten) + ", ";
+        }
+
+        if (cbPicante.isChecked()) {
+            etiquetas += getString(R.string.picante) + ", ";
+        }
+
+        if (etiquetas.isEmpty()) {
+            etiquetas = getString(R.string.etiquetas_ninguna);
+        } else {
+            etiquetas = etiquetas.substring(0, etiquetas.length() - 2);
+        }
+
+
+        String comentario = etComentario.getText().toString().trim();
+        //si no escribe reseña, saldra que no escribio reseña
+        if (comentario.isEmpty()) {
+            comentario = getString(R.string.etiquetas_ninguna);
+        }
+
+
+        DecimalFormat formato = new DecimalFormat(
+                "0.00",
+                new DecimalFormatSymbols(new Locale("es", "ES"))
+        );
+
+
+        String resumen = getString(
+                R.string.resumen_resena,
+                nombresTapas[barActual],
+                nombresBares[barActual],
+                tamano,
+                formato.format(precioBase),
+                formato.format(precio),
+                formato.format(descuento),
+                formato.format(precioFinal),
+                formato.format(rbPuntuacion.getRating()),
+                sbCalidadPrecio.getProgress(),
+                meGusta,
+                etiquetas,
+                comentario
+        );
 
         tvResumen.setText(resumen);
 
-        Toast.makeText(this, R.string.toast_precio_calculado, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.toast_resena_publicada, Toast.LENGTH_SHORT).show();
     }
 
-    private void limpiarFormulario() {
-        etBar.setText("");
-        etTapa.setText("");
-        etPrecio.setText("");
-        swMeGusta.setChecked(false);
-        cbEstudiante.setChecked(false);
-        tvMeGusta.setText(R.string.me_gusta_inicial);
-        tvResumen.setText(R.string.precio_final_inicial);
+     private void limpiarFormulario() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.dialog_limpiar_titulo)
+                .setMessage(R.string.dialog_limpiar_mensaje)
+                .setPositiveButton(R.string.dialog_limpiar_confirmar, (dialog, which) -> {
 
-        Toast.makeText(this, R.string.toast_formulario_limpio, Toast.LENGTH_SHORT).show();
+                    rbPuntuacion.setRating(0);
+
+                    rgTamano.check(R.id.rbTapa);
+
+                    sbCalidadPrecio.setProgress(5);
+
+                    cbVegetariana.setChecked(false);
+                    cbSinGluten.setChecked(false);
+                    cbPicante.setChecked(false);
+
+                    swMeGusta.setChecked(false);
+                    tvMeGusta.setText(R.string.me_gusta_inicial);
+
+                    cbEstudiante.setChecked(false);
+
+                    etComentario.setText("");
+
+                    tvOpinionPuntuacion.setText(R.string.opinion_sin_puntuar);
+
+                    tvResumen.setText(R.string.resumen_inicial);
+
+                    Toast.makeText(this, R.string.toast_formulario_limpio,
+                            Toast.LENGTH_SHORT).show();
+
+                })
+                .setNegativeButton(R.string.dialog_limpiar_cancelar, null)
+                .show();
     }
     private void actualizarIconoFavorito() {
         if (favoritos[barActual]) {
