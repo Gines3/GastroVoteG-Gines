@@ -52,5 +52,6 @@
     <string name="resumen">RESUMEN</string>
     <string name="resumen_inicial">Aquí aparecerá tu última reseña</string>
     <string name="progreso_inicial">Ruta: 0 de 8 bares</string>
-
+    <string name="posicion_bar">Bar %1$d de %2$d</string>
+    <string name="precio_base">%1$s €</string>
 </resources>

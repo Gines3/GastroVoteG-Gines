@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="bares" translatable="false">
+        <item>Taberna La Marinera</item>
+        <item>Bar El Tapeo</item>
+        <item>La Esquina Murciana</item>
+        <item>Casa Pepe</item>
+        <item>El Rincón del Sabor</item>
+        <item>Bar La Plaza</item>
+        <item>La Tasquita</item>
+        <item>Mesón del Puerto</item>
+    </string-array>
+
+    <string-array name="tapas" translatable="false">
+        <item>Marinera</item>
+        <item>Patatas bravas</item>
+        <item>Ensaladilla rusa</item>
+        <item>Matrimonio</item>
+        <item>Croquetas caseras</item>
+        <item>Caballito</item>
+        <item>Tosta de tomate</item>
+        <item>Pulpo al horno</item>
+    </string-array>
+
+    <string-array name="descripciones_tapas">
+        <item>Rosquilla con ensaladilla y anchoa</item>
+        <item>Patatas fritas con salsa brava casera</item>
+        <item>Ensaladilla rusa tradicional</item>
+        <item>Anchoa y boquerón sobre una rosquilla</item>
+        <item>Croquetas caseras de jamón</item>
+        <item>Langostino rebozado y frito</item>
+        <item>Tosta crujiente con tomate y aceite</item>
+        <item>Pulpo al horno con patatas</item>
+    </string-array>
+
+    <string-array name="precios_base">
+        <item>2.50</item>
+        <item>3.00</item>
+        <item>2.80</item>
+        <item>2.50</item>
+        <item>3.50</item>
+        <item>2.80</item>
+        <item>2.00</item>
+        <item>4.50</item>
+    </string-array>
+
+    <string-array name="valoraciones">
+        <item>4.5</item>
+        <item>4.2</item>
+        <item>4.7</item>
+        <item>4.0</item>
+        <item>4.6</item>
+        <item>4.3</item>
+        <item>3.9</item>
+        <item>4.8</item>
+    </string-array>
+
+</resources>
