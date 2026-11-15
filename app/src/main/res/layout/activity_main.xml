@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,17 +8,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
+    android:fillViewport="true"
+    android:clipToPadding="false"
     tools:context=".MainActivity">
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:fillViewport="true"
-        android:clipToPadding="false"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,10 +65,13 @@
 
                 <Button
                     android:id="@+id/btnBarAnterior"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="56dp"
+                    android:layout_height="48dp"
                     android:minWidth="0dp"
-                    android:text="@string/bar_anterior"
+                    android:padding="0dp"
+                    android:text="◀"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
                     android:contentDescription="@string/bar_anterior" />
 
                 <LinearLayout
@@ -106,10 +104,13 @@
 
                 <Button
                     android:id="@+id/btnBarSiguiente"
-                    android:layout_width="48dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="56dp"
+                    android:layout_height="48dp"
                     android:minWidth="0dp"
-                    android:text="@string/bar_siguiente"
+                    android:padding="0dp"
+                    android:text="▶"
+                    android:textSize="20sp"
+                    android:textAllCaps="false"
                     android:contentDescription="@string/bar_siguiente" />
             </LinearLayout>
 
@@ -142,8 +143,9 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
-                        android:src="@android:drawable/btn_star_big_off"
+                        android:src="@drawable/ic_corazon_vacio"
                         android:contentDescription="@string/favorito"
+                        android:scaleType="fitCenter"
                         app:tint="@color/color_principal" />
                 </LinearLayout>
 
@@ -355,7 +357,7 @@
                     android:backgroundTint="@color/color_principal" />
 
                 <Button
-                    android:id="@+id/btnCalcular"
+                    android:id="@+id/btnPublicarResena"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -431,4 +433,3 @@
 
         </LinearLayout>
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
