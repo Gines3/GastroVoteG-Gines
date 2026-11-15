@@ -1,5 +1,7 @@
 package es.dam.gastrovote.rodriguezmorales;
 //Ginés Rodríguez Morales 2 DAM
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.SeekBar;
 import android.widget.RadioGroup;
 import android.os.Bundle;
@@ -67,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvMeGusta;
     private CheckBox cbEstudiante;
     private TextView tvResumen;
+    private EditText etComentario;
+    private TextView tvContadorCaracteres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +92,9 @@ public class MainActivity extends AppCompatActivity {
         tvMeGusta = findViewById(R.id.tvMeGusta);
         cbEstudiante = findViewById(R.id.cbEstudiante);
         tvResumen = findViewById(R.id.tvResumen);
+        //ampliacion 0/200
+        etComentario = findViewById(R.id.etComentario);
+        tvContadorCaracteres = findViewById(R.id.tvContadorCaracteres);
 
         // Conectar los elementos del selector
         btnBarAnterior = findViewById(R.id.btnBarAnterior);
@@ -113,6 +120,22 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnLimpiar = findViewById(R.id.btnLimpiar);
         Button btnPublicarResena = findViewById(R.id.btnPublicarResena);
+
+        etComentario.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                tvContadorCaracteres.setText(s.length() + "/200");
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
         sbCalidadPrecio.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
