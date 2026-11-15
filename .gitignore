@@ -1,5 +1,20 @@
 # Project exclude paths
-/.gradle/
-/app/build/
-/app/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/
-/build/
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Android Studio
+.idea/
+
+# Configuracion local
+local.properties
+
+# Almacenes de claves
+*.jks
+*.keystore
+
+# Claves de API y secretos
+apikey.properties
+api_keys.properties
+secrets.properties
