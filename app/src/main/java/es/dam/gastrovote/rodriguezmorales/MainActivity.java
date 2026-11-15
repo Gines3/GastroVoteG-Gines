@@ -213,39 +213,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void calcularPrecio() {
-        String bar = etBar.getText().toString().trim();
-        String tapa = etTapa.getText().toString().trim();
-        String precioTexto = etPrecio.getText().toString().trim();
+        double precioBase;
 
-        if (TextUtils.isEmpty(bar) || TextUtils.isEmpty(tapa)) {
-            Toast.makeText(this, R.string.toast_bar_tapa, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (TextUtils.isEmpty(precioTexto)) {
-            Toast.makeText(this, R.string.toast_precio_valido, Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        double precio;
         try {
-            precio = Double.parseDouble(precioTexto.replace(',', '.'));
+            precioBase = Double.parseDouble(preciosBase[barActual].replace(',', '.'));
         } catch (NumberFormatException e) {
             Toast.makeText(this, R.string.toast_precio_valido, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        if (precio <= 0 || Double.isInfinite(precio) || Double.isNaN(precio)) {
-            Toast.makeText(this, R.string.toast_precio_valido, Toast.LENGTH_SHORT).show();
-            return;
+        double multiplicador = 1;
+
+        int tamanoSeleccionado = rgTamano.getCheckedRadioButtonId();
+
+        if (tamanoSeleccionado == R.id.rbMediaRacion) {
+            multiplicador = 2;
+        } else if (tamanoSeleccionado == R.id.rbRacion) {
+            multiplicador = 3;
         }
 
+        double precio = precioBase * multiplicador;
+
         double descuento = 0;
+
         if (cbEstudiante.isChecked()) {
             descuento = precio * 0.10;
         }
 
         double precioFinal = precio - descuento;
+
         String meGusta = swMeGusta.isChecked()
                 ? getString(R.string.si)
                 : getString(R.string.no);
@@ -254,16 +250,26 @@ public class MainActivity extends AppCompatActivity {
         DecimalFormat formato = new DecimalFormat("0.00", simbolos);
 
         String resumen;
+
         if (cbEstudiante.isChecked()) {
             resumen = getString(R.string.resumen_con_descuento,
-                    tapa, bar, formato.format(precio), formato.format(descuento),
-                    formato.format(precioFinal), meGusta);
+                    nombresTapas[barActual],
+                    nombresBares[barActual],
+                    formato.format(precio),
+                    formato.format(descuento),
+                    formato.format(precioFinal),
+                    meGusta);
         } else {
             resumen = getString(R.string.resumen_sin_descuento,
-                    tapa, bar, formato.format(precio), formato.format(precioFinal), meGusta);
+                    nombresTapas[barActual],
+                    nombresBares[barActual],
+                    formato.format(precio),
+                    formato.format(precioFinal),
+                    meGusta);
         }
 
         tvResumen.setText(resumen);
+
         Toast.makeText(this, R.string.toast_precio_calculado, Toast.LENGTH_SHORT).show();
     }
 
