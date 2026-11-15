@@ -293,7 +293,8 @@ public class MainActivity extends AppCompatActivity {
 
         DecimalFormat formato = new DecimalFormat(
                 "0.00",
-                new DecimalFormatSymbols(new Locale("es", "ES"))
+                //asi coge el formato del idioma del dispositivo
+                DecimalFormatSymbols.getInstance(Locale.getDefault())
         );
 
 
@@ -387,6 +388,13 @@ public class MainActivity extends AppCompatActivity {
             btnFavorito.setImageResource(R.drawable.ic_corazon_lleno);
         } else {
             btnFavorito.setImageResource(R.drawable.ic_corazon_vacio);
+        }
+        if (favoritos[barActual]) {
+            Toast.makeText(this, R.string.toast_favorito_anadido,
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, R.string.toast_favorito_quitado,
+                    Toast.LENGTH_SHORT).show();
         }
     }
     // Actualizar la información del bar seleccionado
