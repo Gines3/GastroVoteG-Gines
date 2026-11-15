@@ -60,4 +60,5 @@
     <string name="opinion_correcta">Correcta</string>
     <string name="opinion_muy_buena">¡Muy buena!</string>
     <string name="opinion_espectacular">¡Espectacular!</string>
+    <string name="contador_caracteres_inicial">0/200</string>
 </resources>
