@@ -2,10 +2,10 @@ package es.dam.gastrovote.rodriguezmorales;
 //Ginés Rodríguez Morales 2 DAM
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.RadioGroup;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -30,6 +30,12 @@ public class MainActivity extends AppCompatActivity {
     private String[] descripcionesTapas;
     private String[] preciosBase;
     private String[] valoraciones;
+
+    private boolean[] baresValorados = new boolean[8];
+    private boolean logroDesbloqueado = false;
+
+    private TextView tvProgresoRuta;
+    private ProgressBar pbRuta;
 
     //para guardar si esta marcado como favorito
      private boolean[] favoritos = new boolean[8];
@@ -84,6 +90,10 @@ public class MainActivity extends AppCompatActivity {
         descripcionesTapas = getResources().getStringArray(R.array.descripciones_tapas);
         preciosBase = getResources().getStringArray(R.array.precios_base);
         valoraciones = getResources().getStringArray(R.array.valoraciones);
+
+        tvProgresoRuta = findViewById(R.id.tvProgresoRuta);
+        pbRuta = findViewById(R.id.pbRuta);
+
 
         etBar = findViewById(R.id.etBar);
         etTapa = findViewById(R.id.etTapa);
@@ -191,7 +201,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnPublicarResena.setOnClickListener(v -> calcularPrecio());
+        btnPublicarResena.setOnClickListener(v -> publicarResena());
         btnLimpiar.setOnClickListener(v -> limpiarFormulario());
 
         rbPuntuacion.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
@@ -212,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
         actualizarBar();
     }
 
-    private void calcularPrecio() {
+    private void publicarResena() {
         if (rbPuntuacion.getRating() == 0) {
             Toast.makeText(this, R.string.toast_puntuar, Toast.LENGTH_SHORT).show();
             return;
@@ -306,6 +316,7 @@ public class MainActivity extends AppCompatActivity {
         tvResumen.setText(resumen);
 
         Toast.makeText(this, R.string.toast_resena_publicada, Toast.LENGTH_SHORT).show();
+        actualizarProgresoRuta();
     }
 
      private void limpiarFormulario() {
@@ -341,6 +352,35 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton(R.string.dialog_limpiar_cancelar, null)
                 .show();
+    }
+    private void actualizarProgresoRuta() {
+
+        baresValorados[barActual] = true;
+
+        int cantidadBares = 0;
+
+        for (boolean valorado : baresValorados) {
+            if (valorado) {
+                cantidadBares++;
+            }
+        }
+
+        pbRuta.setProgress(cantidadBares);
+
+        tvProgresoRuta.setText(
+                getString(R.string.progreso_ruta, cantidadBares)
+        );
+
+        if (cantidadBares == 3 && !logroDesbloqueado) {
+
+            logroDesbloqueado = true;
+
+            new AlertDialog.Builder(this)
+                    .setTitle(R.string.logro_titulo)
+                    .setMessage(R.string.logro_mensaje)
+                    .setPositiveButton(R.string.aceptar, null)
+                    .show();
+        }
     }
     private void actualizarIconoFavorito() {
         if (favoritos[barActual]) {
