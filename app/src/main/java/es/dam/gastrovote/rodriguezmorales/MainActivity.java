@@ -1,6 +1,7 @@
 package es.dam.gastrovote.rodriguezmorales;
 //Ginés Rodríguez Morales 2 DAM
-
+import android.widget.SeekBar;
+import android.widget.RadioGroup;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.Button;
@@ -46,6 +47,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvPrecioBase;
     private ImageButton btnFavorito;
     private RatingBar rbMediaTapa;
+    // Puntuacion y opinion de la resena
+    private RatingBar rbPuntuacion;
+    private TextView tvOpinionPuntuacion;
+
+    // Tamaño ración
+     private RadioGroup rgTamano;
+    // Calidad-precio
+    private SeekBar sbCalidadPrecio;
+    private TextView tvCalidadPrecio;
+    private CheckBox cbVegetariana;
+    private CheckBox cbSinGluten;
+    private CheckBox cbPicante;
 
     private EditText etBar;
     private EditText etTapa;
@@ -87,10 +100,34 @@ public class MainActivity extends AppCompatActivity {
         tvDescripcionTapa = findViewById(R.id.tvDescripcionTapa);
         tvPrecioBase = findViewById(R.id.tvPrecioBase);
         rbMediaTapa = findViewById(R.id.rbMediaTapa);
+        rbPuntuacion = findViewById(R.id.rbPuntuacion);
+        tvOpinionPuntuacion = findViewById(R.id.tvOpinionPuntuacion);
+        rgTamano = findViewById(R.id.rgTamano);
+        cbVegetariana = findViewById(R.id.cbVegetariana);
+        cbSinGluten = findViewById(R.id.cbSinGluten);
+        cbPicante = findViewById(R.id.cbPicante);
+        //sb = seekbar, tv = textView
+        sbCalidadPrecio = findViewById(R.id.sbCalidadPrecio);
+        tvCalidadPrecio = findViewById(R.id.tvCalidadPrecio);
         btnFavorito = findViewById(R.id.btnFavorito);
 
         Button btnLimpiar = findViewById(R.id.btnLimpiar);
         Button btnPublicarResena = findViewById(R.id.btnPublicarResena);
+        sbCalidadPrecio.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                tvCalidadPrecio.setText(getString(R.string.calidad_precio_valor, progress));
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+            }
+        });
+
 
         //llenar el corazon , favorito llamando al metodo actualizarIcono
         btnFavorito.setOnClickListener(v -> {
@@ -133,6 +170,21 @@ public class MainActivity extends AppCompatActivity {
 
         btnPublicarResena.setOnClickListener(v -> calcularPrecio());
         btnLimpiar.setOnClickListener(v -> limpiarFormulario());
+
+        rbPuntuacion.setOnRatingBarChangeListener((ratingBar, rating, fromUser) -> {
+
+            if (rating == 0) {
+                tvOpinionPuntuacion.setText(R.string.opinion_sin_puntuar);
+            } else if (rating <= 2) {
+                tvOpinionPuntuacion.setText(R.string.opinion_mejorable);
+            } else if (rating <= 3) {
+                tvOpinionPuntuacion.setText(R.string.opinion_correcta);
+            } else if (rating <= 4) {
+                tvOpinionPuntuacion.setText(R.string.opinion_muy_buena);
+            } else {
+                tvOpinionPuntuacion.setText(R.string.opinion_espectacular);
+            }
+        });
         //para que siempre muestre el primer bar al iniciar
         actualizarBar();
     }
