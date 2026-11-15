@@ -46,7 +46,7 @@
                 android:id="@+id/tvSubtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/ruta_tapa"
+                android:text="@string/subtitulo"
                 android:textColor="@color/texto_secundario"
                 android:textSize="18sp"
                 android:layout_marginBottom="12dp" />
@@ -87,7 +87,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="@string/bar_inicial"
+                        tools:text="Taberna La Marinera"
                         android:textColor="@color/texto"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -98,8 +98,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@string/posicion_bar_inicial"
-                        android:textColor="@color/texto_secundario"
-                        android:textSize="12sp" />
+                        style="@style/TextoSecundario" />
                 </LinearLayout>
 
                 <Button
@@ -133,7 +132,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/tapa_inicial"
+                        tools:text="Marinera"
                         android:textColor="@color/color_principal"
                         android:textSize="17sp"
                         android:textStyle="bold" />
@@ -153,16 +152,15 @@
                     android:id="@+id/tvDescripcionTapa"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/descripcion_tapa_inicial"
-                    android:textColor="@color/texto_secundario"
-                    android:textSize="14sp" />
+                    tools:text="Rosquilla con ensaladilla y anchoa"
+                    style="@style/TextoSecundario" />
 
                 <TextView
                     android:id="@+id/tvPrecioBase"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/precio_base_inicial"
+                    tools:text="2,50 €"
                     android:textColor="@color/texto"
                     android:textStyle="bold" />
 
@@ -268,8 +266,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:text="@string/calidad_precio_inicial"
-                android:textColor="@color/texto_secundario"
-                android:textSize="12sp" />
+                style="@style/TextoSecundario" />
 
             <TextView
                 style="@style/EtiquetaCampo"
@@ -365,8 +362,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:text="@string/contador_caracteres_inicial"
-                android:textColor="@color/texto_secundario"
-                android:textSize="12sp" />
+                style="@style/TextoSecundario" />
 
             <LinearLayout
                 android:layout_width="match_parent"
