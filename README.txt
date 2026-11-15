@@ -56,9 +56,6 @@ Colores definidos en recursos para los modos claro y oscuro.
 Estilos reutilizables para mantener la coherencia visual de la interfaz.
 
 
-//Capturas de pantalla, guardadas en la carpeta docs/capturas/ del repositorio.
-
-
 ## Tabla de pruebas
 
 | Nº | Prueba realizada | Resultado esperado | Resultado obtenido |
@@ -77,6 +74,27 @@ Estilos reutilizables para mantener la coherencia visual de la interfaz.
 | 5.5 | Reseñar dos veces el mismo bar | El contador de bares visitados no aumenta por segunda vez. | El contador no aumenta al reseñar por segunda vez el mismo bar. |
 | 5.6 | Cancelar el diálogo de Limpiar | El formulario conserva los datos introducidos. | Los datos del formulario se conservan al cancelar. |
 
+##Capturas de pantalla, guardadas en la carpeta docs/capturas/ del repositorio.
+Capturas: Las capturas las hice la mayoria en modo oscuro, en ingles, vertical como dijo el documento(excepto las que se tenian que hacer en español
+1.1 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso1.1.png 
+1.2 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso1.2.png
+2.1 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso2.1.png
+2.2(las demás estan en modo oscuro)
+3.1 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso3.1.png
+3.2 las demás estan en ingles
+4.1 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso4.1.png
+5.1 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.1.png
+5.2 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.2.png
+5.3 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.3.1.png
+https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.3.2.png
+https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.3.3.png
+5.4 
+https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.4.1.png
+https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.4.2.png
+https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.4.3.png
+5.5 Las capturas de 5.3 y 5.4 son en el mismo bar, no sube el contador
+5.6 https://github.com/Gines3/GastroVoteG-Gines/blob/main/docs/capturas/Caso5.6.png (muestro el menu de cancelar, si se cancela no se borra)
+
 
 ### Problema de diseño detectado con Layout Inspector
 El boton Me gusta no tenia color
@@ -91,3 +109,5 @@ Los favoritos se mantienen mientras la aplicación está abierta, pero no se con
 La aplicación utiliza un catálogo de 8 bares predefinidos y no permite añadir bares nuevos.
 
 Hay datos que no se han implementado como la direccion y el Telefono
+
+Ayudas externas: youtube, w3schools, las paginas webs del modulo , traductor ingles 
