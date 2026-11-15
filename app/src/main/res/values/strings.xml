@@ -41,7 +41,8 @@
     <string name="puntuacion">Puntuación</string>
     <string name="sin_puntuar">Sin puntuar</string>
     <string name="calidad_precio">Calidad-precio</string>
-    <string name="calidad_precio_inicial">5/10</string>
+    <string name="calidad_precio_valor">Calidad-precio: %1$d/10</string>
+    <string name="calidad_precio_inicial">Calidad-precio: 5/10</string>
     <string name="etiquetas">Etiquetas</string>
     <string name="vegetariana">Vegetariana</string>
     <string name="sin_gluten">Sin gluten</string>
@@ -54,4 +55,9 @@
     <string name="progreso_inicial">Ruta: 0 de 8 bares</string>
     <string name="posicion_bar">Bar %1$d de %2$d</string>
     <string name="precio_base">%1$s €</string>
+    <string name="opinion_sin_puntuar">Sin puntuar</string>
+    <string name="opinion_mejorable">Mejorable</string>
+    <string name="opinion_correcta">Correcta</string>
+    <string name="opinion_muy_buena">¡Muy buena!</string>
+    <string name="opinion_espectacular">¡Espectacular!</string>
 </resources>
